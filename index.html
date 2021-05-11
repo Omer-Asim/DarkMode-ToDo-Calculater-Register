@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>  
+
+    <header class="container-fluid d-flex justify-content-between align-items-center responsive">
+        <div class=" text-center h3"> TODOLİST APP || CALCULATOR || LOGIN || REGISTER || DARKMODE </div>
+            
+                <div class=""">
+                    <button id="toggle" class="btn btn-light border m-2"><i class='far fa-sun text-warning '></i></button>
+                </div>
+                
+    </header>
+
+  
+
+
+
+    <section class=" ">
+        <div class="row">
+            <div class="col-lg-4 col-sm-6">
+                <form action="#" class="form1" id="form1">
+                    <label for="text">Yapılacakları giriniz</label>
+                    <input type="text" name="text" id="text1" value="" autocomplete="off">
+                    <input onclick="addTodo(event)" type="submit" value="EKLE" id="buton">
+                    <small class="text-center p-2 text-danger shadow-sm " id="spanErr"></small>
+                   
+                </form>
+            </div>
+            <div class="col-lg-4 col-sm-6 yapilanlar">
+                <div class="header">
+                    <h3 class="text-center">Listem</h3>
+                </div>
+               <ol id="toDoList"></ol>
+            </div>
+          
+            <div class="col-lg-4 col-sm-12">
+                <div class="text-center h3 p-2 m-2 bg-transparent">
+                   Hesap Makinesi
+                </div>
+        
+                <form action="" class="hesap-makinesi">
+                    <span class="shadow font-weight-bold text-center w-100">Lütfen Sayıları girdikten sonra butonlara tıklayınız.<br> Aksi halde fonksiyon çalışmaz</span>
+                    <input type="text" name="input1" id="input1" autocomplete="off">
+                    <input type="text" name="input2" id="input2" autocomplete="off">
+                    <input type="button" value="Topla(+)" id="topla" >
+                    <input type="button" value="Çıkart (-)" id="cikar">
+                    <input type="button" value="Çarp (*)" id="carp">
+                    <input type="button" value="Böl (/)" id="böl">
+                    <div id="sonuc" class="alert alert-danger d-none" role="alert">
+                        
+                    </div>
+        
+                </form> 
+            </div>
+            </div>
+    </section>
+
+    <section class="">
+    <header class="text-center h3 ">KULLANICI GİRİŞ KONTROLÜ JS</header>
+        <form class="formKayit"  id="form" action="https://www.google.com.tr" method="GET">
+            <input type="email" name="email" id="email" value="" placeholder="Email" autocomplete="off">
+            <input type="password" name="sifre" id="sifre" value="" placeholder="Şifre" autocomplete="off">
+            <input  type="submit" value="Giriş Yap" id="girisYap" >
+            <div id="KullaniciSonucu"></div>
+        </form>
+        </section>
+        
+        <section>
+        <header class="text-center h3"> KULLANICI Kayıt formu JS</header>
+        <form id="formKayit" class="formKayit shadow" >
+            <label for="isimSoyisim">Ad Soyad</label>
+            <input type="text" name="isimSoyisim" id="isimSoyisim" placeholder="isim Soyisim" autocomplete="off">
+            <span id="isimHata" class="text-danger h5 ml-2"></span>
+            <label for="eposta">Email Adresi</label>
+            <input type="email" name="eposta" id="eposta" placeholder="Email Adresi" autocomplete="off">
+            <span id="postaHata" class="text-danger h5 ml-2"></span>
+            <label for="sifre1">Şifre</label>
+            <input type="password" name="sifre1" id="sifre1" placeholder="En az 6 karakter" autocomplete="off">
+            <label for="sifre2">Şifre Tekrar</label>
+            <input type="password" name="sifre2" id="sifre2" placeholder="En az 6 karakter" autocomplete="off">
+            <label for="options">Cinsiyet</label>
+            
+            <select name="" id="options">
+            <option value="E" >Erkek</option>
+             <option value="K">Kadın</option>
+            </select> 
+            <input type="submit" value="Kayıt Ol" id="kayıtol">
+
+        </form>
+
+    </section>
+
+    
+
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>

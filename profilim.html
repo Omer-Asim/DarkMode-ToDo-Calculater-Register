@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+   
+   
+</head>
+<body>
+   
+ 
+        <button data-modal-target="#modal">Tıklayınız</button>
+        <div class="modal " id="modal"> 
+            
+            <div class="modal-header">
+                <div class="title">HEADER </div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                ASDASDASDASDasdasdasdddddddddddddddddddddddddddddd
+                asddddddddddddddddddddddddddddddasdasdasdasd123123
+            </div>
+        </div>
+        
+       
+        
+        
+        <div  id="overlay"></div>
+ 
+        <script>
+            const openModalButtons=document.querySelectorAll('[data-model-target]');
+            const closeModalButtons=document.querySelectorAll('[data-close-button]');
+            const overlay=document.getElementById('overlay');
+
+            openModalButtons.forEach(button =>{
+                button.addEventListener('click' ,()=>{
+                    const modal=document.querySelector(button.dataset.modalTarget)
+                    openmModal(modal)
+                })
+            })
+
+            closeModalButtons.forEach(button =>{
+                button.addEventListener('click' ,()=>{
+                    const modal=button.closest('.modal')
+                    closeModal(modal)
+                })
+            })
+
+            overlay.addEventListener('click', () => {
+                const modals=document.querySelectorAll('.modal.active')
+                modals.forEach(modal => {
+                    closeModal(modal)
+                })
+            })
+
+            function openmModal(modal){
+                if(modal ==null) return
+                modal.classlist.add('active')
+                overlay.classList.add('active')
+            }
+
+            function closeModal(modal){
+                if(modal ==null) return
+                modal.classlist.remove('active')
+                overlay.classList.remove('active')
+            }
+
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+       
+</body>
+</html>
